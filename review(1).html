@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiara Home Baking - Customer Reviews</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #FAF3E0;
+            color: #5D5C61;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            color: #E88E9B;
+        }
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 28px;
+            color: #8D8DAA;
+            margin-bottom: 15px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            background: #FFEBF6;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #FFC3D9;
+            width: 100%;
+        }
+        input, textarea, select {
+            padding: 12px;
+            font-size: 16px;
+            width: 90%;
+            border: 1px solid #FFC3D9;
+            border-radius: 8px;
+            background: #FFF5FA;
+            color: #5D5C61;
+            text-align: center;
+        }
+        button {
+            padding: 12px;
+            background-color: #F5A9B8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            width: 95%;
+        }
+        button:hover {
+            background-color: #E88E9B;
+        }
+        #thank-you {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function showThankYouMessage(event) {
+            event.preventDefault();
+            document.getElementById('review-form').style.display = 'none';
+            document.getElementById('thank-you').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>Kiara.HomeBaking</h1>
+    <h2>Leave a Review</h2>
+    <form id="review-form" action="https://formspree.io/f/xqaerblp" method="POST" onsubmit="showThankYouMessage(event)">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <select name="order" required>
+            <option value="">What did you order?</option>
+            <option value="Fudgy Brownie">Fudgy Brownie</option>
+            <option value="Chocolate Brownie">Chocolate Brownie</option>
+            <option value="All Nuts Brownie">All Nuts Brownie</option>
+            <option value="Nutella Brownie">Nutella Brownie</option>
+            <option value="Cookie Crush Brownie">Cookie Crush Brownie</option>
+            <option value="Marble Cake 1/2kg">Marble Cake 1/2kg</option>
+            <option value="Chocolate Cake 1/2kg">Chocolate Cake 1/2kg</option>
+        </select>
+        <select name="rating" required>
+            <option value="">Rate Us</option>
+            <option value="5">★★★★★</option>
+            <option value="4">★★★★☆</option>
+            <option value="3">★★★☆☆</option>
+            <option value="2">★★☆☆☆</option>
+            <option value="1">★☆☆☆☆</option>
+        </select>
+        <textarea name="comments" placeholder="Your feedback..." rows="4" required></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+    <div id="thank-you">Thank you for your review! 💖</div>
+</body>
+</html>
